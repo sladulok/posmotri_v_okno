@@ -17,11 +17,10 @@ html {
   background-color: #1b1919;
   max-width: 1200px;
   height: 100vh;
+  margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  justify-content: center;
 }
 
 h1,
@@ -47,9 +46,7 @@ ol {
   display: flex;
   align-items: flex-end;
   gap: 30px;
-  padding: 133px 30px;
   width: 1140px;
-  height: 800px;
 }
 
 .result__video-container {
@@ -62,6 +59,8 @@ ol {
 .result__video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -81,17 +80,19 @@ ol {
 
 .search-form__fieldset-title {
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: 400;
 }
 
 .search-form__label {
   width: fit-content;
   cursor: pointer;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -108,9 +109,23 @@ ol {
   width: 225px;
   height: 27px;
   border: none;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
   background-color: transparent;
+}
+
+.search-form__textfield:active{
+  border: 1px solid #FFF;
+  border-radius: 0;
+}
+
+.search-form__textfield:focus{
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
 }
 
 .visually-hidden {
@@ -147,9 +162,11 @@ ol {
   font-weight: 700;
   background-color: transparent;
   border: 1px solid #FFF;
+  appearance: none;
+  height: 34px;
 }
 
-.button:focus{
+.button:focus {
   outline: none;
 }
 
@@ -158,18 +175,16 @@ ol {
   outline-offset: 1px;
 }
 
-button:hover {
+.button:hover {
 	text-decoration: underline;
 }
 
 .button:active {
-  border: 1px solid #FFF;
-  background: #545050;
+  background-color: #545050;
 }
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
   align-self: end;
 }
 
@@ -185,7 +200,7 @@ button:hover {
   font-family: 'Oswald', sans-serif;
   font-size: 75px;
   font-weight: 700;
-  line-height: 70.5px;
+  line-height: 0.94;
   text-transform: uppercase;
 }
 
@@ -209,6 +224,7 @@ button:hover {
   text-decoration: none;
   color: #FFF;
   display: block;
+  margin: 2px;
 }
 
 .content__card-link:active {
@@ -216,7 +232,6 @@ button:hover {
 }
 
 .content__card-link:hover {
-  line-height: 16.2px;
   text-decoration-line: underline;
 }
 
@@ -225,7 +240,7 @@ button:hover {
 }
 
 .content__card-link:focus-visible {
-  outline: 1px solid white;
+  outline: 1px solid #FFF;
   outline-offset: 1px
 }
 
@@ -261,8 +276,4 @@ button:hover {
 
 .more-button {
   width: 399px;
-  height: 34px;
 }
-
-
-
